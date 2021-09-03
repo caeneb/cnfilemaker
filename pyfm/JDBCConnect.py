@@ -11,7 +11,7 @@ class FileMaker:
         )
         self.cursor = self.connect.cursor()
 
-    def execute(self, sql, parameters: list = []):
+    def select(self, sql, parameters: list = []):
         if parameters:
             self.cursor.execute(sql, parameters)
         else:
@@ -20,3 +20,9 @@ class FileMaker:
         results = self.cursor.fetchall()
 
         return results
+
+    def execute(self, sql, parameters: list = []):
+        if parameters:
+            self.cursor.execute(sql, parameters)
+        else:
+            self.cursor.execute(sql)

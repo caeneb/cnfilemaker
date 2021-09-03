@@ -19,9 +19,22 @@ def test_filemaker():
     assert results[0] == ('marcus', 'evans')
 
 
-def test_execute():
-    results = fm.execute('SELECT name_first, name_last FROM test_db')
+def test_select():
+    results = fm.select('SELECT name_first, name_last FROM test_db')
     assert results[0] == ('marcus', 'evans')
 
-    results = fm.execute('SELECT name_first, name_last FROM test_db WHERE name_first = ?', ['jane'])
+    results = fm.select('SELECT name_first, name_last FROM test_db WHERE name_first = ?', ['jane'])
     assert results[0] == ('jane', 'doe')
+
+
+def test_execute():
+    fm.execute("INSERT INTO test_db (name_first, name_last) VALUES ('George', 'Washington')")
+    results = fm.select(
+        'SELECT name_first, name_last FROM test_db WHERE name_first = ? and name_last = ?', ['George', 'Washington']
+    )
+    assert results[0] == ('George', 'Washington')
+    fm.execute('DELETE FROM test_db WHERE name_first = ? and name_last = ?', ['George', 'Washington'])
+    results = fm.select(
+        'SELECT name_first, name_last FROM test_db WHERE name_first = ? and name_last = ?', ['George', 'Washington']
+    )
+    assert results == []
