@@ -4,8 +4,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='pyfilemaker',
-    version='0.0.1.2',
+    name='pyfm',
+    version='0.0.1.3',
     author='Marcus Evans',
     author_email='marcus@marcusbevans.com',
     description='Python library for FileMaker JDBC Driver',
