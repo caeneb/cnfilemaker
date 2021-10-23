@@ -5,13 +5,13 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name='cnfilemaker',
-    version='0.0.1.5',
+    version='0.0.1.6',
     author='Marcus Evans',
     author_email='marcus@marcusbevans.com',
     description='Python library for FileMaker JDBC/ODBC Driver',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='https://github.com/caeneb/cnfilemaker',
+    url='https://github.com/caeneb/cnfilemaker.git',
     project_urls={
         "Bug Tracker": "https://github.com/caeneb/cnfilemaker/issues"
     },
