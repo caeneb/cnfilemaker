@@ -1,5 +1,5 @@
 import pytest
-import pyfm.JDBCConnect as pyfm
+import cnfilemaker.JDBCConnect as pyfm
 from dotenv import dotenv_values
 
 env = dotenv_values('test.env')
