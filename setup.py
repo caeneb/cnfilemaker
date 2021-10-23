@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name='cnfilemaker',
-    version='0.0.1.6',
+    version='0.0.1.7',
     author='Marcus Evans',
     author_email='marcus@marcusbevans.com',
     description='Python library for FileMaker JDBC/ODBC Driver',
